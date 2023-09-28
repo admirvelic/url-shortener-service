@@ -2,9 +2,13 @@
 
 The URL Shortener Service is a Java Spring Boot project that allows you to create shortened URLs, manage them, and redirect to the original ones. It consists of two services:
 
-Management Service 
+Management Service:
 
-Redirection Service
+https://github.com/admirvelic/URLShortenerManagementService.git
+
+Redirection Service:
+
+https://github.com/admirvelic/URLShortenerRedirectionService.git
 
 To use this project, you need to have Docker installed. You can refer to the official Docker documentation for installation steps:
 
@@ -14,7 +18,7 @@ Here are the installation steps:
 
 Clone the repositories using the following commands:
 
-git clone https://github.com/admirvelic/URLShortenerManagementService.git
+git clone   https://github.com/admirvelic/URLShortenerManagementService.git
 
 git clone https://github.com/admirvelic/URLShortenerRedirectionService.git
 
