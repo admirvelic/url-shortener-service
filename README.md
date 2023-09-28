@@ -1,43 +1,40 @@
-# url-shortener-service
+# URL Shortener Service
 
-The URL Shortener Service is a Java Spring Boot project that allows you to create shortened URLs, manage them, and redirect to the original ones. It consists of two services:
+The URL Shortener Service is a robust Java Spring Boot project that simplifies the creation and management of shortened URLs and seamlessly redirects to the original ones. This project is modularized into two distinct services:
 
-Management Service:
+### Services:
+1. **[Management Service](https://github.com/admirvelic/URLShortenerManagementService.git)**
+   - Repository: https://github.com/admirvelic/URLShortenerManagementService.git
 
-https://github.com/admirvelic/URLShortenerManagementService.git
+2. **[Redirection Service](https://github.com/admirvelic/URLShortenerRedirectionService.git)**
+   - Repository: https://github.com/admirvelic/URLShortenerRedirectionService.git
 
-Redirection Service:
+## Prerequisites:
+Ensure that Docker is installed on your system. If not, you can download and install Docker by following the official [Docker documentation](https://docs.docker.com/get-docker/).
 
-https://github.com/admirvelic/URLShortenerRedirectionService.git
+## Installation Steps:
 
-To use this project, you need to have Docker installed. You can refer to the official Docker documentation for installation steps:
+1. **Clone the Repositories:**
+   ```sh
+   git clone https://github.com/admirvelic/URLShortenerManagementService.git
+   git clone https://github.com/admirvelic/URLShortenerRedirectionService.git
 
- Get Docker.
+2. Start the Services with Docker:
 
-Here are the installation steps:
+Navigate to the Management Service directory and use docker-compose to start the required containers.
 
-Clone the repositories using the following commands:
+`docker-compose up -d`
 
-git clone   https://github.com/admirvelic/URLShortenerManagementService.git
+The above command initializes the following three services:
 
-git clone https://github.com/admirvelic/URLShortenerRedirectionService.git
+- <b>MariaDB</b>: Acts as the main database for the Management Service.
+- <b>Redis</b>: Serves as an in-memory database for the Redirection Service.
+- <b>RabbitMQ</b>: Facilitates communication between the Management and Redirection services.
 
-Use docker-compose from the Management Service to spin up the required containers for the project:
+3. Run the Applications:
 
-docker-compose up -d
+Open the cloned repositories in your preferred IDE and run them.
 
-This command will start three services:
+## Usage:
 
-MariaDB: Serves as the main database for the Management Service.
-
-Redis: Serves as an in-memory database for the Redirection Service.
-
-RabbitMQ: Used for communication between the two services.
-
-Open the repositories in your preferred IDE and run the following files:
-
-UrlShortenerManagementServiceApplication.java
-
-UrlShortenerRedirectionServiceApplication.java
-
-For detailed usage instructions, please refer to the Postman collection (URL shortener.postman_collection.json) located in this repository.
+For a detailed guide on how to use the available endpoints and services, please refer to the included Postman collection, URL shortener.postman_collection.json, located in the repository.
