@@ -1,51 +1,39 @@
 # url-shortener-service
-Java Spring Boot Project for creating shortened URLs, managing them and redirecting to real ones.  
 
-This project is made of two services:
+The URL Shortener Service is a Java Spring Boot project that allows you to create shortened URLs, manage them, and redirect to the original ones. It consists of two services:
 
--Managemetn service: 
+Management Service 
 
-  https://github.com/admirvelic/URLShortenerManagementService.git
+Redirection Service
 
--Redirection service:
+To use this project, you need to have Docker installed. You can refer to the official Docker documentation for installation steps:
 
-  https://github.com/admirvelic/URLShortenerRedirectionService.git
+ Get Docker.
 
+Here are the installation steps:
 
-Prerequisites:
+Clone the repositories using the following commands:
 
-Docker
+git clone https://github.com/admirvelic/URLShortenerManagementService.git
 
-Refer to documentation on steps to install: https://docs.docker.com/get-docker/
+git clone https://github.com/admirvelic/URLShortenerRedirectionService.git
 
-Installation:
+Use docker-compose from the Management Service to spin up the required containers for the project:
 
-1. Clone the repos with:
+docker-compose up -d
 
-   git clone https://github.com/admirvelic/URLShortenerManagementService.git
+This command will start three services:
 
-   git clone https://github.com/admirvelic/URLShortenerRedirectionService.git
+MariaDB: Serves as the main database for the Management Service.
 
-2. Use docker-compose from Management service to spin up containers for services required for project:
+Redis: Serves as an in-memory database for the Redirection Service.
 
-   docker-compose up -d
+RabbitMQ: Used for communication between the two services.
 
-   It will spin up 3 services:
-   
-   -MariaDb witch serves as main database for Management service
+Open the repositories in your preferred IDE and run the following files:
 
-   -Redis witch serves as in memory database for Redirection service
+UrlShortenerManagementServiceApplication.java
 
-   -RabbitMQ witch is used for comunication betwen two services
+UrlShortenerRedirectionServiceApplication.java
 
-3. Open repositories in your IDE of choice and run:
-
-    -UrlShortenerManagementServiceApplication.java
-  
-    -UrlShortenerRedirectionServiceApplication.java
-
-Usage:
-
-Please refer to the Postman collection (URL shortener.postman_collection.json) located in this repo for Usage details.
-
-   
+For detailed usage instructions, please refer to the Postman collection (URL shortener.postman_collection.json) located in this repository.
